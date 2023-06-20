@@ -1,0 +1,43 @@
+.inputs__range {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+
+  width: 93px;
+  height: 24px;
+  padding: 6px 10px;
+
+  border: 2px @light-blue solid;
+  border-radius: 4px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 2px @dark-blue solid;
+  }
+
+  &:disabled {
+    border: 2px @secondary-light-grey solid;
+    background-color: @bg-grey;
+    color: @light-grey;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .inputs__range {
+    width: 63px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .inputs__range {
+    width: 110px;
+  }
+}
