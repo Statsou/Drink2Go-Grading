@@ -1,0 +1,178 @@
+.price__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+
+  margin: 0 0 29px;
+  padding: 0;
+}
+
+.price__range {
+  position: relative;
+}
+
+.price__range-scale {
+  position: absolute;
+
+  height: 2px;
+  width: 280px;
+
+  background-color: @secondary-light-grey;
+
+  &--disabled {
+    .price__range-bar {
+      background-color: @light-grey;
+    }
+
+    .price__range-toggle {
+      color: @bg-grey;
+      border: 2px @light-grey solid;
+      cursor: default;
+    }
+  }
+}
+
+.price__range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: @light-blue;
+}
+
+.price__range-toggle {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: @white;
+  border: 2px @light-blue solid;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--min {
+    top: -10px;
+    left: 0;
+  }
+
+  &--max {
+    top: -10px;
+    left: 236px;
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    outline: 0;
+
+    &::after {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+      background-color: @opacity-blue;
+      content: "";
+    }
+  }
+
+  &:active:not(:disabled) {
+    &::after {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+      background-color: @base-blue;
+      content: "";
+    }
+  }
+}
+
+.price__wrapper-inputs {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 38px 0 0;
+
+  &::after {
+    position: absolute;
+    top: 20px;
+    left: 136px;
+
+    width: 8px;
+    height: 2px;
+    background-color: @light-grey;
+    content: " ";
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .price__range-scale {
+    top: 1px;
+    width: 223px;
+  }
+
+  .price__range-toggle {
+    &--max {
+      left: 179px;
+    }
+  }
+
+  .price__range-bar {
+    top: -1px;
+  }
+
+  .price__wrapper-inputs {
+    margin: 33px 0 0;
+
+    &::after {
+      top: 19px;
+      left: 107px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .price__range-scale {
+    width: 318px;
+  }
+
+  .price__range-bar {
+    width: 285px;
+  }
+
+  .price__range-toggle {
+    &--max {
+      left: 274px;
+    }
+
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      &::after {
+        top: 2px;
+        right: 2px;
+      }
+    }
+
+    &:active:not(:disabled) {
+      &::after {
+        top: 2px;
+        right: 2px;
+      }
+    }
+  }
+
+  .price__wrapper-inputs {
+    margin: 35px 0 0;
+
+    &::after {
+      width: 10px;
+      left: 154px;
+    }
+  }
+}
